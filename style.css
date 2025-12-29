@@ -1,0 +1,130 @@
+/* Sama persis dengan style sebelumnya */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    background: rgba(20, 20, 30, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #ff003c;
+    box-shadow: 0 0 40px rgba(255, 0, 60, 0.5);
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ff003c;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ffea;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: #ff003c;
+}
+
+.badge.premium {
+    background: linear-gradient(90deg, #ff8a00, #ff003c);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.user-info {
+    background: rgba(255, 0, 60, 0.15);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+    border: 1px solid #ff003c;
+}
+
+.user-info i {
+    color: #00ffea;
+    margin-right: 8px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00ffea;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+.btn-send {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(90deg, #ff003c, #cc00ff);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.bug-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.bug-tag {
+    background: rgba(255, 0, 60, 0.2);
+    color: #ff99b8;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid #ff003c;
+}
